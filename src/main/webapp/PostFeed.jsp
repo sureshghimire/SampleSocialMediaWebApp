@@ -56,7 +56,7 @@
 
 							<form action="createPost" method="post">
 								<div class="form-group">
-									<textarea class="form-control" rows="4" cols="100" name="post"
+									<textarea class="form-control" rows="2" cols="100" name="post"
 										placeholder="What's on your mind?"></textarea>
 
 								</div>
