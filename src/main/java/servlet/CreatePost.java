@@ -24,16 +24,14 @@ public class CreatePost extends HttpServlet {
 		if(session !=null) {
 			User user = (User) session.getAttribute("authUser");
 			
-			PostEntry entry = new PostEntry(post, user);
-			
-			System.out.println(entry.toString());
-			
-			Db service = new Db();
-			service.createPost(entry);
-			service.close();
-			
-			
-			
+			if(user !=null) {
+				PostEntry entry = new PostEntry(post, user);
+				System.out.println(entry.toString());
+				
+				Db service = new Db();
+				service.createPost(entry);
+				service.close();
+			}
 			resp.sendRedirect("postFeed");
 		}
 		
